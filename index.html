@@ -1,0 +1,154 @@
+---
+layout: index
+title: Home
+permalink: /
+---
+
+<body>
+
+<nav class="navbar navbar-default navbar-custom sticky">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="" onclick=" return Load('/');">AceZeroProxy</a>
+<p style="float: right;margin-top: 23px;">front end by <a class="scoll" style="font-weight: bold;" href="https://twitter.com/gabriicom">@gabriicom</a>, idea and other stuff by <a class="scoll" style="font-weight: bold;" href="https://twitter.com/_AceLewis">@_AceLewis</a></p>
+        </div>
+
+    </div><!-- /.container-fluid -->
+</nav>
+
+
+
+<section class="section-lg home-alt bg-solid-1" id="home">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="home-wrapper text-center">
+
+                    <div class="">
+                        <h1 class="banner">ZeroNet's Meta Proxy</h1>
+                    </div>
+
+                    <p>Input a ZeroNet url and get taken to a proxy</p>
+
+                </div>
+                <div class="text-center subscribe-form">
+                    <form id="use-proxy-form" class="form" autocomplete="off">
+                        <input type="text" placeholder="" id="proxy-input" value="{{ query }}" autofocus>
+                        <button id="use-proxy-button" type="button">Use a Proxy</button>
+                    </form>
+                </div>
+
+                <div class="home-wrapper text-center">
+                    <br>
+                    <p>Create link meta proxy link to share with others</p>
+
+                </div>
+
+                <div class="text-center subscribe-form">
+                    <form id="make-link-form" class="form" autocomplete="off">
+                        <input type="text" placeholder="" id="make-input" value="{{ query }}" autofocus>
+                        <button id="make-link-button" type="button">Make Link</button>
+                    </form>
+                </div>
+                <div class="home-wrapper">
+                    <br><br>
+                    <p><b>Why?<br>
+                    Sometimes ZeroNet proxies go down, so if you are linking to a ZeroNet site on social media, for example on your blog, Reddit, Facebook or Twitter that link will stop working when the proxy goes down. By using AceZeroProxy you can make a link that will work 100% of the time so you will not need to update your blog if the ZeroNet proxy you linked to goes down.</p>
+                    <br>
+                    <p><b>How?<br>
+                    This site simply links to ZeroNet proxies for the link given, none of the proxies are not run by me so I reccomend that you only browse using them and don't log in as it is technically possible for the proxy to steal your login details (although that has never happened yet). I will not know the ZeroNet sites you visit however the ZeroNet proxy you use will.</p>
+                    <br>
+                    <p><b>How you can help<br>
+                    There are not that many ZeroNet proxies currently running, you could help out this site and others by running your own ZeroNet proxy and telling me about it via <a style="color: #FFFFFF; font-weight: bold;" href="https://twitter.com/_AceLewis">Twitter</a> or <a style="color: #FFFFFF; font-weight: bold;" href="https://reddit.com/u/_AceLewis">Reddit</a>.</p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script type="text/javascript">
+var host = "{{ host }}";
+</script>
+<!-- js placed at the end of the document so the pages load faster -->
+
+<!-- Bit to go to the proxy  -->
+<script type="text/javascript">
+    var proxybtn = document.getElementById("use-proxy-button")
+    var our_url = window.location.href.replace(window.location.hash, '');
+    proxybtn.onclick = function(){
+        var proxy_input= document.getElementById('proxy-input').value;
+
+        var indexs = proxy_input.indexOf(":43110");
+        if (indexs == -1) {
+            document.getElementById('make-input').value = 'URL must start with 127.0.0.1:43110/';
+        }
+        else{
+            var unique_identifier = proxy_input.substring(indexs+7);
+            location.href = our_url + '#' + unique_identifier;
+            window.location.reload()
+        }
+}
+</script>
+
+<script type="text/javascript">
+    var makebtn = document.getElementById("make-link-button")
+    var our_url = window.location.href.replace(window.location.hash, '');
+    makebtn.onclick = function(){
+        var proxy_input= document.getElementById('make-input').value;
+
+        var indexs = proxy_input.indexOf(":43110");
+        if (indexs == -1) {
+            document.getElementById('make-input').value = 'URL must start with 127.0.0.1:43110/';
+        }
+        else{
+            var unique_identifier = proxy_input.substring(indexs+7);
+            make_url = our_url + '#' + unique_identifier;
+            document.getElementById('make-input').value = make_url;
+        }
+}
+</script>
+
+<script type="text/javascript">
+    setInterval(function() {
+    var hash = window.location.hash.substr(1);
+    if (hash) {
+        var proxy_list = ["https://bit.no.com:43110/"];
+        var proxy_to_use = proxy_list[Math.floor(Math.random()*proxy_list.length)];
+        var redirect_url = proxy_to_use+hash
+        location.href = redirect_url
+    }
+    }, 500);
+</script>
+
+<script src="{{ "/assets/jquery-2.1.4.min.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/assets/css/bootstrap.min.css" | prepend: site.baseurl }}"></script>
+<!-- Jquery easing -->
+<script type="text/javascript" src="{{ "/assets/jquery.easing.1.3.min.js" | prepend: site.baseurl }}"></script>
+<!--sticky header-->
+<script type="text/javascript" src="{{ "/assets/jquery.sticky.js" | prepend: site.baseurl }}"></script>
+<!--common script for all pages-->
+<script src="{{ "/assets/jquery.app.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/assets/js.cookie.js" | prepend: site.baseurl }}"></script>
+
+<script type="text/javascript">
+    //sticky header on scroll
+    $(window).load(function () {
+        $(".sticky").sticky({topSpacing: 0});
+    });
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-70463146-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<script src="{{ "/assets/main.js" | prepend: site.baseurl }}"></script>
+</body>
