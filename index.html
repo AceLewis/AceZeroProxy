@@ -84,7 +84,9 @@ var host = "{{ host }}";
 
         var indexs = proxy_input.indexOf(":43110");
         if (indexs == -1) {
-            document.getElementById('proxy-input').value = 'URL must start with 127.0.0.1:43110/';
+            var unique_identifier = proxy_input;
+            location.href = our_url + '#' + unique_identifier;
+            window.location.reload()
         }
         else{
             var unique_identifier = proxy_input.substring(indexs+7);
@@ -102,7 +104,10 @@ var host = "{{ host }}";
 
         var indexs = proxy_input.indexOf(":43110");
         if (indexs == -1) {
-            document.getElementById('make-input').value = 'URL must start with 127.0.0.1:43110/';
+            // Assume no 127.0.0.1
+            var unique_identifier = proxy_input;
+            make_url = our_url + '#' + unique_identifier;
+            document.getElementById('make-input').value = make_url;
         }
         else{
             var unique_identifier = proxy_input.substring(indexs+7);
