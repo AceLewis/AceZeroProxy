@@ -84,7 +84,7 @@ var host = "{{ host }}";
 
         var indexs = proxy_input.indexOf(":43110");
         if (indexs == -1) {
-            document.getElementById('make-input').value = 'URL must start with 127.0.0.1:43110/';
+            document.getElementById('proxy-input').value = 'URL must start with 127.0.0.1:43110/';
         }
         else{
             var unique_identifier = proxy_input.substring(indexs+7);
@@ -121,7 +121,7 @@ var host = "{{ host }}";
         var redirect_url = proxy_to_use+hash
         location.href = redirect_url
     }
-    }, 500);
+    }, 1000);
 </script>
 
 <script src="{{ "/assets/jquery-2.1.4.min.js" | prepend: site.baseurl }}"></script>
