@@ -121,7 +121,7 @@ var host = "{{ host }}";
     setInterval(function() {
     var hash = window.location.hash.substr(1);
     if (hash) {
-        var proxy_list = ["https://bit.no.com:43110/"];
+        var proxy_list = ["https://zeronet.korso.win/"];
         var proxy_to_use = proxy_list[Math.floor(Math.random()*proxy_list.length)];
         var redirect_url = proxy_to_use+hash
         location.href = redirect_url
