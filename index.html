@@ -51,6 +51,38 @@ permalink: /
                         <button id="make-link-button" type="button">Make Link</button>
                     </form>
                 </div>
+
+                <div class="home-wrapper text-center">
+                    <br>
+                    <p>Popular ZeroNet sites</p>
+
+                </div>
+
+                <br>
+                <div class="text-center popular-form">
+                    <form id="link-form" class="form" autocomplete="off">
+                        <input type="text" value="ZeroHello - ZeroNet's Homepage" id="make-input" value="{{ query }}" autofocus readonly>
+                        <button type="button" onclick="location.href='/#1HeLLo4uzjaLetFx6NH3PMwFP3qbRbTf3D';">Go</button>
+                    </form>
+                </div>
+                <br>
+                <div class="text-center popular-form">
+                    <form id="link-form" class="form" autocomplete="off">
+                        <input type="text" value="ZeroMe - A decentalised microblogging website" id="make-input" value="{{ query }}" autofocus readonly>
+                        <button type="button" onclick="location.href='/#Me.ZeroNetwork.bit';">Go</button>
+                    </form>
+                </div>
+                <br>
+                <div class="text-center popular-form">
+                    <form id="link-form" class="form" autocomplete="off">
+                        <input type="text" value="Kaffiene Search - A client site search engine for ZeroNet" id="make-input" value="{{ query }}" autofocus readonly>
+                        <button type="button" onclick="location.href='/#kaffiene.bit';">Go</button>
+                    </form>
+                </div>
+                <br>
+
+
+
                 <div class="home-wrapper">
                     <br><br>
                     <p><b>Why?<br>
@@ -121,7 +153,7 @@ var host = "{{ host }}";
     setInterval(function() {
     var hash = window.location.hash.substr(1);
     if (hash) {
-        var proxy_list = ["https://zeronet.korso.win/"];
+        var proxy_list = ["https://onlyzero.net/", "https://proxy1.zn.kindlyfire.me/"];
         var proxy_to_use = proxy_list[Math.floor(Math.random()*proxy_list.length)];
         var redirect_url = proxy_to_use+hash
         location.href = redirect_url
@@ -137,7 +169,7 @@ var host = "{{ host }}";
 <script type="text/javascript" src="{{ "/assets/jquery.sticky.js" | prepend: site.baseurl }}"></script>
 <!--common script for all pages-->
 <script src="{{ "/assets/jquery.app.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/assets/js.cookie.js" | prepend: site.baseurl }}"></script>
+<!-- <script src="{{ "/assets/js.cookie.js" | prepend: site.baseurl }}"></script> -->
 
 <script type="text/javascript">
     //sticky header on scroll
