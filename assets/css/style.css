@@ -8,7 +8,7 @@
     height: 28px;
     -webkit-border-radius: 100%;
     border-radius: 100%;
-    opacity: 1;
+    opacity: 1
     -webkit-box-shadow: inset 0 0 0 2px #4E4E4E;
     box-shadow: inset 0 0 0 2px #4E4E4E;
     width: 26px;
@@ -72,7 +72,7 @@ a{
        -o-transition: all 400ms ease-in-out;
           transition: all 400ms ease-in-out;
 }
-    
+
 /* BUTTONS */
 
 .btn-dark {
@@ -305,7 +305,7 @@ a{
   opacity: 0.7;
   background: #fc00ff; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #fc00ff , #00dbde); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #fc00ff , #00dbde); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */   
+  background: linear-gradient(to left, #fc00ff , #00dbde); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-gradient {
@@ -469,7 +469,7 @@ iframe {
 .text-tran-box-dark {
   background: #24C6DC; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #24C6DC , #514A9D); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #24C6DC , #514A9D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */     
+  background: linear-gradient(to left, #24C6DC , #514A9D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .text-transparent {
@@ -726,6 +726,39 @@ iframe {
 }
 
 .subscribe-form button {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    outline: none !important;
+    border-radius: 30px;
+    border: none;
+    color: #7220D4;
+    font-size: 17px;
+    background: #FFFFFF;
+    padding: 11px 30px;
+    font-weight: bold;
+}
+
+.popular-form form{
+  width: 100%;
+  position: relative;
+  max-width: 600px;
+  margin: 0px auto;
+}
+
+.popular-form input {
+  padding: 15px 20px;
+  width: 100%;
+  font-size: 17px;
+  color: #fff;
+  border: none;
+  outline: none !important;
+  padding-left: 30px;
+  background-color: rgba(255, 255, 255, 0.19);
+  border-radius: 30px;
+}
+
+.popular-form button {
     position: absolute;
     top: 4px;
     right: 4px;
