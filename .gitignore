@@ -216,4 +216,6 @@ pip-log.txt
 .mr.developer.cfg
 
 # Site
-._site/
+_site/
+.sass-cache/
+.jekyll-metadata

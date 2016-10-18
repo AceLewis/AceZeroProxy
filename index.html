@@ -153,7 +153,12 @@ var host = "{{ host }}";
     setInterval(function() {
     var hash = window.location.hash.substr(1);
     if (hash) {
-        var proxy_list = ["https://onlyzero.net/", "https://proxy1.zn.kindlyfire.me/"];
+        // Get the proxies from a CSV so I only need to update the CSV when I
+        //change the proxy list
+        var proxy_list = [];
+        {% for proxy_info in site.data.zeronet_proxies %}
+          proxy_list.push("{{ proxy_info.zeronet_proxy }}");
+        {% endfor %}
         var proxy_to_use = proxy_list[Math.floor(Math.random()*proxy_list.length)];
         var redirect_url = proxy_to_use+hash
         location.href = redirect_url
