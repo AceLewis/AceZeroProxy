@@ -6,6 +6,7 @@ permalink: /
 
 <body>
 
+<!-- The navbar, the thing that goes on top of the webpage -->
 <nav class="navbar navbar-default navbar-custom sticky">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -17,14 +18,15 @@ permalink: /
     </div><!-- /.container-fluid -->
 </nav>
 
-
-
+<!-- Main section of webpage -->
 <section class="section-lg home-alt bg-solid-1" id="home">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="home-wrapper text-center">
 
+                  <!-- Text box and form used so the user can input the URL
+                  that they want to go to-->
                     <div class="">
                         <h1 class="banner">ZeroNet's Meta Proxy</h1>
                     </div>
@@ -32,6 +34,7 @@ permalink: /
                     <p>Input a ZeroNet url and get taken to a proxy</p>
 
                 </div>
+
                 <div class="text-center subscribe-form">
                     <form id="use-proxy-form" class="form" autocomplete="off">
                         <input type="text" placeholder="" id="proxy-input" value="{{ query }}" autofocus>
@@ -39,6 +42,8 @@ permalink: /
                     </form>
                 </div>
 
+                <!-- Form and text box to allow a user to create a link that
+                they can share with a friend-->
                 <div class="home-wrapper text-center">
                     <br>
                     <p>Create link meta proxy link to share with others</p>
@@ -52,6 +57,8 @@ permalink: /
                     </form>
                 </div>
 
+                <!-- A list of popular ZeroNet sites so a user can find a site
+                to browse without knowing any URLs-->
                 <div class="home-wrapper text-center">
                     <br>
                     <h1 style="margin-bottom: 20px !important" class="banner">Popular ZeroNet sites</h1>
@@ -81,8 +88,7 @@ permalink: /
                 </div>
                 <br>
 
-
-
+                <!-- Some text at the bottom of the page explaing why, how and how you can help -->
                 <div class="home-wrapper">
                     <br><br>
                     <p><b>Why?<br>
@@ -93,7 +99,6 @@ permalink: /
                     <br>
                     <p><b>How you can help<br>
                     There are not that many ZeroNet proxies currently running, you could help out this site and others by running your own ZeroNet proxy and telling me about it via <a style="color: #FFFFFF; font-weight: bold;" href="https://twitter.com/_AceLewis">Twitter</a> or <a style="color: #FFFFFF; font-weight: bold;" href="https://reddit.com/u/_AceLewis">Reddit</a>.</p>
-
 
                 </div>
             </div>
@@ -107,7 +112,7 @@ var host = "{{ host }}";
 </script>
 <!-- js placed at the end of the document so the pages load faster -->
 
-<!-- Bit to go to the proxy  -->
+<!-- Script to take user to a proxy  -->
 <script type="text/javascript">
     var proxybtn = document.getElementById("use-proxy-button")
     var our_url = window.location.href.replace(window.location.hash, '');
@@ -116,6 +121,7 @@ var host = "{{ host }}";
 
         var indexs = proxy_input.indexOf(":43110");
         if (indexs == -1) {
+            // Assume no 127.0.0.1
             var unique_identifier = proxy_input;
             location.href = our_url + '#' + unique_identifier;
             window.location.reload()
@@ -128,6 +134,7 @@ var host = "{{ host }}";
 }
 </script>
 
+<!-- Script to  make the proxy link but NOT go to the link just display it-->
 <script type="text/javascript">
     var makebtn = document.getElementById("make-link-button")
     var our_url = window.location.href.replace(window.location.hash, '');
@@ -149,6 +156,7 @@ var host = "{{ host }}";
 }
 </script>
 
+<!-- The script to redirect the user to a working proxy -->
 <script type="text/javascript">
     setInterval(function() {
     var hash = window.location.hash.substr(1);
