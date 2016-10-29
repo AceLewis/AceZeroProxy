@@ -1,6 +1,6 @@
 # AceZeroProxy - ZeroNet's Meta Proxy
 
-ZeroNet is a way to host websites in a decentralised manner, to view these sites you need to have ZeroNet installed on your PC or use a ZeroNet proxy. The big problem is many ZeroNet proxies may only run for a week or a month this is a big problem that AceZeroProxy addresses.
+ZeroNet is a way to host websites in a decentralised manner, to view these sites you need to have ZeroNet installed on your PC or use a ZeroNet proxy. Many ZeroNet proxies may only run for a week or a month this is a big problem that AceZeroProxy addresses.
 
 This ZeroNet meta proxy is simple to use, try it out [https://zero.acelewis.com](https://zero.acelewis.com) and read below how it works.
 
@@ -8,7 +8,7 @@ This ZeroNet meta proxy is simple to use, try it out [https://zero.acelewis.com]
 
 # The Problem
 
-If you are using ZeroNet and want to share a link with a someone then they must have ZeroNet installed unless you use a ZeroNet Proxy. The big problem with ZeroNet proxies is sometimes they go down... actually they quite often go down. This is a big problem if you want to post links to a ZeroNet proxy on a blog post or on social media because you would have to go through and update all the link when the ZeroNet proxy goes down.
+If you are using ZeroNet and want to share a link with a someone then they must have ZeroNet installed unless you use a ZeroNet Proxy. The problem with ZeroNet proxies is sometimes they go down... actually they quite often go down. This is a big headache if you want to post links to a ZeroNet proxy on a blog post or on social media because you would have to go through and update all the link when the ZeroNet proxy goes down.
 
 The second problem is that it may be difficult to remember the link to a working proxy, with this meta proxy you only need to remember one somewhat simple address: [https://zero.acelewis.com](https://zero.acelewis.com)
 
